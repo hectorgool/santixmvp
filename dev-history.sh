@@ -30,3 +30,21 @@ rails db:migrate
 #view routes
 rails routes
 
+#install bundle
+bundle install
+
+#edit Gemfile and add
+#gem 'devise', git: 'git@github.com:plataformatec/devise.git'
+bundle  install 
+bundle show devise
+
+rails generate devise:install
+
+rails g devise:views
+
+rails generate devise user
+
+#migrate database
+rails db:migrate
+
+bundle update devise
