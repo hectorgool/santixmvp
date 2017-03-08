@@ -48,3 +48,14 @@ rails generate devise user
 rails db:migrate
 
 bundle update devise
+
+#set root path
+#edit config/routes.rb
+#root to: "tours#index" 
+
+#edit Gemfile and add
+#gem 'simple_form'
+
+#gem 'bootstrap-sass'
+
+bundle
