@@ -94,3 +94,23 @@ bundle update
 
 rails g rspec:install
 
+git add.
+git commit -m "Set up gem dependencies and run RSpec generator"
+git push
+
+#Adding the admin field to the users table
+rails g migration add_admin_to_users admin:boolean
+
+#To change the default, open the freshly generated migration (which will be in db/
+#migrate/<timestamp>_add_admin_to_users.rb) and change this line,
+#add_column :users, :admin, :boolean
+#to this:
+#add_column :users, :admin, :boolean, default: false
+
+bundle exec rails db:migrate 
+
+bundle exec rake db:seed
+
+git add .
+git commit -m "Added admin flag to User model, and seeded the first admin user"
+git push

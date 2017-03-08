@@ -1,2 +1,28 @@
-<h1>Tours#index</h1>
-<p>Find me in app/views/tours/index.html.erb</p>
+
+<div class="jumbotron">
+  <h1>
+    Tours <small>by local</small>
+    <p>
+      <a class="btn btn-info btn-lg" href="#" role="button">
+        <%= t('i_want_to_be_a_tour_guide') %>
+      </a>
+    </p>
+    <% admins_only do %>
+      <%= link_to new_admin_tour_url, :class => 'btn btn-info btn-lg pull-right', :id => 'new-tour' do %>
+        <i class="glyphicon glyphicon-plus new-tour"></i> <%= t('new_tour') %>
+      <% end %>
+    <% end %>
+  </h1>
+</div>
+
+<%= react_component('SearchBox') %>
+<br />
+
+<%= render :partial => 'tours', :object => @tours %>
+
+<div class="infinite-rows"></div>
+
+<p class="pag">
+  <%= link_to_next_page(@tours, 'Next Page', :remote => true, class: 'btn btn-default btn-lg btn-block') %>
+</p>
+
