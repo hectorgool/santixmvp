@@ -48,6 +48,7 @@ gem 'bootstrap-sass'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.4'
 end
 
 group :development do
@@ -61,3 +62,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# santo
+# The ~> operator is called the approximate version constraint.
+group :test do
+  gem 'capybara', '~> 2.4'
+  gem 'factory_girl_rails', '~> 4.5'
+  gem 'selenium-webdriver', '~> 3.0'
+  gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
+end

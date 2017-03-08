@@ -67,3 +67,30 @@ rails generate simple_form:install --bootstrap
 #    get '/users' => 'devise/registrations#new'
 #    get '/users/password' => 'devise/passwords#new'
 #  end
+
+#edit db/seeds.rb and add
+#santo. create user
+#unless User.exists?(email: "hectorgool@gmail.com")
+  #User.create!(email: "hectorgool@gmail.com", password: "asdfasdf")
+#end
+
+rails db:seed
+
+#edit Gemfile and add 
+# group :test do
+#   gem 'capybara', '~> 2.4'
+#   gem 'factory_girl_rails', '~> 4.5'
+#   gem 'selenium-webdriver', '~> 3.0'
+#   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
+# end
+
+bundle
+
+
+#edit Gemfile and add
+# group :development, :test do 
+#gem 'rspec-rails', '~> 3.4'
+bundle update
+
+rails g rspec:install
+
