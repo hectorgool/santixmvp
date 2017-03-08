@@ -1,4 +1,4 @@
-class Admin::ToursController < ApplicationController
+class Admin::ToursController < Admin::ApplicationController
   def new
   end
 

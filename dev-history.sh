@@ -114,3 +114,19 @@ bundle exec rake db:seed
 git add .
 git commit -m "Added admin flag to User model, and seeded the first admin user"
 git push
+
+#edit and add
+#app/helpers/application_helper.rb 
+  # #santo
+  # def admins_only(&block)
+  #   block.call if current_user.try(:admin?)
+  # end
+  # #santo beta
+  # def title(*parts)
+  #   unless parts.empty?
+  #     content_for :title do
+  #       (parts << "Tour").join(" - ")
+  #     end
+  #   end
+  # end
+
