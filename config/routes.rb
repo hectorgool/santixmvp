@@ -27,5 +27,12 @@ Rails.application.routes.draw do
   # santo
   root to: "tours#index"  
 
+  # santo
+  devise_scope :user do
+    get '/users' => 'devise/registrations#new'
+    get '/users/password' => 'devise/passwords#new'
+  end
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

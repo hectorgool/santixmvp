@@ -59,3 +59,11 @@ bundle update devise
 #gem 'bootstrap-sass'
 
 bundle
+rails generate simple_form:install --bootstrap
+
+#edit config/routes and add
+  # santo
+#  devise_scope :user do
+#    get '/users' => 'devise/registrations#new'
+#    get '/users/password' => 'devise/passwords#new'
+#  end
