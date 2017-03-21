@@ -1,16 +1,60 @@
 class Admin::ToursController < Admin::ApplicationController
-  def new
+
+  before_action :set_tour, only: [:edit, :update, :destroy]
+
+	def new
+    @tour = Tour.new
+    @tour.attachments.build
   end
 
   def create
+    @tour = Tour.new(tour_params)
+    @tour.user = current_user
+    if @tour.save
+      flash[:notice] = "Tour has been created."
+      redirect_to @tour
+    else
+      flash.now[:alert] = "Tour has not been created."
+      render "new"
+    end
   end
 
   def edit
+    @tour.attachments.build
   end
 
   def update
+    respond_to do |format|
+      if @tour.update(tour_params)
+        format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
+        format.json { render :show, status: :ok, location: @tour }
+      else
+        format.html { render :edit }
+        format.json { render json: @tour.errors, status: :unprocessable_entity }
+
+      end
+    end
   end
 
   def destroy
+    @tour.destroy
+      respond_to do |format|
+      format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
+
+  private
+
+    def set_tour
+      @tour = Tour.friendly.find(params[:id])
+      rescue ActiveRecord::RecordNotFound
+      flash[:alert] = "The tour you were looking for could not be found."
+      redirect_to tours_path
+    end
+
+	  def tour_params
+      params.require(:tour).permit(:name, :description, :price, :latitude, :longitude, attachments_attributes: [:file, :file_cache])
+    end
+
 end

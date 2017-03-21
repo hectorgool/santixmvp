@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# santo 
+# santo
 gem 'devise'
 #gem 'devise', git: 'git@github.com:plataformatec/devise.git'
 
@@ -44,6 +44,12 @@ gem 'simple_form'
 
 # santo
 gem 'bootstrap-sass'
+
+# santo
+gem 'carrierwave', '~> 1.0'
+
+# santo
+gem 'fog', '~> 1.40'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

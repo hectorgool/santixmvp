@@ -1,0 +1,13 @@
+rails g migration add_price_to_tours price:decimal
+rails g migration add_latitude_at_to_tours latitude:float
+rails g migration add_longitude_at_to_tours longitude:float
+
+rails d migration add_price_to_tours price:decimal
+
+rails g migration add_firstname_at_to_users firstname:string
+rails g migration add_lastname_at_to_users lastname:string
+rails g migration add_archived_at_to_users archived_at:timestamp
+rails g migration add_user_to_tours user:references
+
+rails g model attachment file:string tour:references
+rails g migration remove_attachment_from_tours attachment:string

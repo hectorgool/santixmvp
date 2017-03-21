@@ -2,7 +2,9 @@
 
 <div class="col-md-12">
 	<p>
-		<%= react_component('SearchBox') %>
+		<%=
+			#react_component('SearchBox')
+		%>
 	</p>
 </div>
 
@@ -36,9 +38,11 @@
 
 			<h1>
 				<%= @tour.name %>
+				<!--
 				<small class="pull-right">
 					10 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
 				</small>
+				-->
 			</h1>
 
 			<h3>
@@ -46,9 +50,15 @@
 			</h3>
 
 			<h4>
-        <%= link_to profile_url(@tour.user_id) do %>
-          <%= @tour.user.firstname %> <%= @tour.user.lastname %>
-        <% end %>
+				<%=
+					#link_to profile_url(@tour.user_id) do
+				%>
+          <%=
+						#@tour.user.firstname %> <%= @tour.user.lastname
+					%>
+        <%
+					#end
+				%>
 			</h4>
 
 			<dl>
@@ -89,7 +99,9 @@
 			  <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Aditional Info
 			</button>
 
-			<%= render "layouts/modals" %>
+			<%=
+				#render "layouts/modals"
+			%>
 
 		</div>
 
@@ -100,21 +112,23 @@
 	<div class="panel panel-default">
 		<div class="panel-body">
 
-			<%= render "layouts/carousel" %>
+			<%=
+				#render "layouts/carousel"
+			%>
 
 			<br />
 
 			<%=
-				map(:container_id => "mymap",
-					:center => {
-						:latlng => [@tour.latitude, @tour.longitude],
-						:zoom => 9
-					},
-					:markers => [{
-						:latlng => [@tour.latitude, @tour.longitude],
-						:popup => @tour.name
-					}]
-				)
+				# map(:container_id => "mymap",
+				# 	:center => {
+				# 		:latlng => [@tour.latitude, @tour.longitude],
+				# 		:zoom => 9
+				# 	},
+				# 	:markers => [{
+				# 		:latlng => [@tour.latitude, @tour.longitude],
+				# 		:popup => @tour.name
+				# 	}]
+				# )
 			%>
 
 		</div>
@@ -153,19 +167,33 @@
 				#react_component('CommentBox')
 			%>
 			<h3>
-				<%= t('comments') %>
+				<%=
+					#t('comments')
+				%>
 			</h3>
 
-			<% if user_signed_in? %>
-				<%=  render "comments/form", tour: @tour, comment: @comment %>
+			<%
+				#if user_signed_in?
+			%>
+				<%=
+					#render "comments/form", tour: @tour, comment: @comment
+				%>
 				<hr>
-			<% end %>
+			<%
+				#end
+			%>
 
-			<div id="comments">
-				<% if @tour.comments.persisted.any? %>
-					<%= render @tour.comments.persisted %>
-				<% end %>
-			</div>
+			<!--<div id="comments">-->
+				<%
+					#if @tour.comments.persisted.any?
+				%>
+					<%=
+						#render @tour.comments.persisted
+					%>
+				<%
+					#end
+				%>
+			<!--</div>-->
 
 		</div>
 	</div>
