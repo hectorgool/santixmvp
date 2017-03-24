@@ -12,11 +12,5 @@ rails g migration add_user_to_tours user:references
 rails g model attachment file:string tour:references
 rails g migration remove_attachment_from_tours attachment:string
 
-Signed out successfully
-<div class="col-md-4 col-md-offset-4">
-  <div class="panel panel-default">
-    <div class="panel-body">
-
-    </div>
-  </div>
-</div>
+https://teamtreehouse.com/community/bookings-in-ruby-on-rails
+gem 'reservation'
