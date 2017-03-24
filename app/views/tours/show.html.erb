@@ -1,16 +1,8 @@
 <% title(@tour.name, "Tours") %>
 
-<div class="col-md-12">
-	<p>
-		<%=
-			#react_component('SearchBox')
-		%>
-	</p>
-</div>
-
 <% if user_signed_in? %>
   <% admins_only do %>
-    <div class="col-md-12">
+    <div class="col-md-6 col-md-offset-3">
 	    <div class="panel panel-default">
 				<div class="panel-body">
 		      <div class="pull-right">
@@ -32,9 +24,9 @@
   <% end %>
 <% end %>
 
-<div class="col-md-6">
-	<div class="panel panel-default">
-		<div class="panel-body">
+<div class="col-md-6 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-body">
 
 			<h1>
 				<%= @tour.name %>
@@ -105,97 +97,6 @@
 
 		</div>
 
-	</div>
-</div>
-
-<div class="col-md-6">
-	<div class="panel panel-default">
-		<div class="panel-body">
-
-			<%=
-				#render "layouts/carousel"
-			%>
-
-			<br />
-
-			<%=
-				# map(:container_id => "mymap",
-				# 	:center => {
-				# 		:latlng => [@tour.latitude, @tour.longitude],
-				# 		:zoom => 9
-				# 	},
-				# 	:markers => [{
-				# 		:latlng => [@tour.latitude, @tour.longitude],
-				# 		:popup => @tour.name
-				# 	}]
-				# )
-			%>
-
-		</div>
-
-		<div class="panel-body">
-			<div class="pull-right">
-				<span class="glyphicon glyphicon-share" aria-hidden="true"></span> Share with:
-				<!--start:bootstrap social-->
-				<a class="btn btn-social-icon btn-lg btn-twitter">
-					<i class="fa fa-twitter"></i>
-				</a>
-				<a class="btn btn-social-icon btn-lg btn-pinterest">
-					<i class="fa fa-pinterest"></i>
-				</a>
-				<a class="btn btn-social-icon btn-lg btn-facebook">
-					<i class="fa fa-facebook"></i>
-				</a>
-				<a class="btn btn-social-icon btn-lg btn-google">
-					<i class="fa fa-google-plus"></i>
-				</a>
-				<a class="btn btn-social-icon btn-lg btn-reddit">
-					<i class="fa fa-reddit"></i>
-				</a>
-				<!--end:bootstrap social-->
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div class="col-md-12">
-	<div class="panel panel-default">
-		<div class="panel-body">
-
-			<%=
-				#react_component('CommentBox')
-			%>
-			<h3>
-				<%=
-					#t('comments')
-				%>
-			</h3>
-
-			<%
-				#if user_signed_in?
-			%>
-				<%=
-					#render "comments/form", tour: @tour, comment: @comment
-				%>
-				<hr>
-			<%
-				#end
-			%>
-
-			<!--<div id="comments">-->
-				<%
-					#if @tour.comments.persisted.any?
-				%>
-					<%=
-						#render @tour.comments.persisted
-					%>
-				<%
-					#end
-				%>
-			<!--</div>-->
-
-		</div>
 	</div>
 </div>
 
