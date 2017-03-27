@@ -14,3 +14,6 @@ rails g migration remove_attachment_from_tours attachment:string
 
 https://teamtreehouse.com/community/bookings-in-ruby-on-rails
 gem 'reservation'
+
+rails g migration AddOmniauthToUsers provider:string uid:string
+rake db:migrate

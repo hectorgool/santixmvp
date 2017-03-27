@@ -46,5 +46,11 @@ Rails.application.routes.draw do
   # santo
   resources :attachments, only: [:show, :new]
 
+  # santo
+  resources :tours do
+    resources :reservations
+    #resources :comments
+  end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

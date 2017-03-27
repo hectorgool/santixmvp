@@ -5,6 +5,7 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+    @reservation = @tour.reservations.build
     respond_to do |format|
       format.html
       format.json { render json: @tour }
