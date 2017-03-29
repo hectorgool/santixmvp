@@ -8,6 +8,9 @@ class Tour < ApplicationRecord
   # santo
   has_many :attachments, dependent: :destroy
 
+  # santo
+  accepts_nested_attributes_for :attachments, reject_if: :all_blank
+
   # ssanto
   has_many :reservations, dependent: :destroy
 
