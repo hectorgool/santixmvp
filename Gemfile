@@ -56,6 +56,9 @@ gem 'fog', '~> 1.40'
 gem 'bootstrap-social-rails'
 
 # santo
+gem 'font-awesome-rails'
+
+# santo
 gem 'omniauth-facebook'
 
 group :development, :test do

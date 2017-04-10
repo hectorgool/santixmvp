@@ -17,3 +17,13 @@ gem 'reservation'
 
 rails g migration AddOmniauthToUsers provider:string uid:string
 rake db:migrate
+
+gem 'simple_calendar', '~> 2.2', '>= 2.2.5'
+gem 'recurring_select',  git: 'https://github.com/sahild/recurring_select.git', branch: 'master'
+
+rails g scaffold Event name start_time:datetime recurring:text
+
+
+<a id="add_file" data-params="{&quot;index&quot;:0}" class="btn btn-default btn-lg btn-block" role="button" data-remote="true" href="/attachments/new">Add another image</a>
+
+<a id="add_file" data-params="{&quot;index&quot;:1}" class="btn btn-default btn-lg btn-block" role="button" data-remote="true" href="/attachments/new">Add another image</a>

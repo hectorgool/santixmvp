@@ -12,8 +12,8 @@ unless User.exists?(email: "santo@santo.com")
 end
 
 # santo. create user
-unless User.exists?(email: "hectorgool@gmail.com")
-  User.create!(firstname: "Hector", lastname: "Gonzalez Olmos", email: "hectorgool@gmail.com", password: "asdfasdf")
+unless User.exists?(email: "hector.gonzalez.olmos@gmail.com")
+  User.create!(firstname: "Hector", lastname: "Gonzalez Olmos", email: "hector.gonzalez.olmos@gmail.com", password: "asdfasdf")
 end
 
 # santo. create tour
