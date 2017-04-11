@@ -27,3 +27,16 @@ rails g scaffold Event name start_time:datetime recurring:text
 <a id="add_file" data-params="{&quot;index&quot;:0}" class="btn btn-default btn-lg btn-block" role="button" data-remote="true" href="/attachments/new">Add another image</a>
 
 <a id="add_file" data-params="{&quot;index&quot;:1}" class="btn btn-default btn-lg btn-block" role="button" data-remote="true" href="/attachments/new">Add another image</a>
+
+
+puts " \n\nauth.inspect.................................................................."
+puts auth.inspect
+puts "\n\nauth.to_yaml------------------------------------------------------------------"
+puts auth.to_yaml
+puts "\n.................................................................."
+
+
+
+
+
+adidas SPZL Samba
