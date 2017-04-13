@@ -6,17 +6,27 @@
     f.input :date, as: :string,
     label: 'Enter Date',
     placeholder: 'Ej: yyyy-mm-dd',
-    input_html: { class: "datepicker" }
+    input_html: { class: 'datepicker' }
   %>
 
-  <%= f.input :departure_time, label: 'Departure time' %>
+  <%=
+    f.input :date, as: :string,
+    label: 'Departure time',
+    placeholder: 'Ej: nn:nn',
+    input_html: { id: 'datetimepicker3' }
+  %>
 
-  <%= f.button :submit, class: 'btn btn-info btn-lg btn-block' %>
+  <%= f.button :submit, t('book_now'), class: 'btn btn-info btn-lg btn-block' %>
 
 <% end %>
 
 <script type="text/javascript">
   $(document).ready(function(){
-     $(".datepicker").datepicker({format: 'yyyy-mm-dd'})
+    $(".datepicker").datepicker({
+      format: 'yyyy-mm-dd'
+    });
+    $('#datetimepicker3').datetimepicker({
+      format: 'LT'
+    });
   });
 </script>

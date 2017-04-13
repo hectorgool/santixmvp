@@ -40,6 +40,7 @@ en:
   already_have_an_account: "Already have an account?"
   or: "OR"
   login_with_facebook: "Login with Facebook"
+  book_now: "Book now"
 
 es:
   new_tour: "Nuevo Tour"
@@ -62,3 +63,4 @@ es:
   already_have_an_account: "¿Ya tienes una cuenta?"
   or: "O"
   login_with_facebook: "Login with Facebook"
+  book_now: "Book now"
