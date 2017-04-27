@@ -17,3 +17,4 @@
 //= require bootstrap-datepicker
 //= require moment
 //= require bootstrap-datetimepicker
+//= require recurring_select
