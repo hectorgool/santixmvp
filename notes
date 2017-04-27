@@ -35,8 +35,21 @@ puts "\n\nauth.to_yaml----------------------------------------------------------
 puts auth.to_yaml
 puts "\n.................................................................."
 
-
-
-
-
 adidas SPZL Samba
+
+ruby g controller bookings
+ruby d controller bookings
+
+
+
+
+
+rails g model booking customers:integer date:date departure_time:time tour:references user:references
+rails d model booking
+
+rails d model reservation
+
+rails g controller bookings index new create show edit update destroy
+rails d controller bookings index new create show edit update destroy
+
+rails d controller reservations index new create show edit update destroy

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170326165638) do
+ActiveRecord::Schema.define(version: 20170329154247) do
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "file"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20170326165638) do
   create_table "reservations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "customers"
     t.date     "date"
-    t.time     "departure_time"
+    t.date     "schedule"
     t.integer  "tour_id"
     t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["tour_id"], name: "index_reservations_on_tour_id", using: :btree
     t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
   end
