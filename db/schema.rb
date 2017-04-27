@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329154247) do
+ActiveRecord::Schema.define(version: 20170427214303) do
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "file"
@@ -20,16 +20,16 @@ ActiveRecord::Schema.define(version: 20170329154247) do
     t.index ["tour_id"], name: "index_attachments_on_tour_id", using: :btree
   end
 
-  create_table "reservations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "bookings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "customers"
     t.date     "date"
-    t.date     "schedule"
+    t.time     "departure_time"
     t.integer  "tour_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["tour_id"], name: "index_reservations_on_tour_id", using: :btree
-    t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["tour_id"], name: "index_bookings_on_tour_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
   end
 
   create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20170329154247) do
   end
 
   add_foreign_key "attachments", "tours"
-  add_foreign_key "reservations", "tours"
-  add_foreign_key "reservations", "users"
+  add_foreign_key "bookings", "tours"
+  add_foreign_key "bookings", "users"
   add_foreign_key "tours", "users"
 end

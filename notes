@@ -13,7 +13,7 @@ rails g model attachment file:string tour:references
 rails g migration remove_attachment_from_tours attachment:string
 
 https://teamtreehouse.com/community/bookings-in-ruby-on-rails
-gem 'reservation'
+
 
 rails g migration AddOmniauthToUsers provider:string uid:string
 rake db:migrate
@@ -47,9 +47,6 @@ ruby d controller bookings
 rails g model booking customers:integer date:date departure_time:time tour:references user:references
 rails d model booking
 
-rails d model reservation
 
 rails g controller bookings index new create show edit update destroy
 rails d controller bookings index new create show edit update destroy
-
-rails d controller reservations index new create show edit update destroy

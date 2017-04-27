@@ -9,10 +9,10 @@ class User < ApplicationRecord
   has_many :tours, dependent: :destroy
 
   # santo
-  has_many :reservations, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 
   # santo
-  accepts_nested_attributes_for :reservations, reject_if: :all_blank
+  accepts_nested_attributes_for :bookings, reject_if: :all_blank
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

@@ -71,13 +71,13 @@
   			<div class="panel-body">
 
   				<h3>
-  					<%= t('reservation') %>
+  					<%= t('booking') %>
   				</h3>
 
   				<% if user_signed_in? %>
-  					<%= render "reservations/form", tour: @tour, reservation: @reservation %>
+  					<%= render "bookings/form", tour: @tour, booking: @booking %>
   				<% else %>
-  					<a class="btn btn-info btn-lg btn-block" href="/users/sign_in" role="button">Make a Reservation</a>
+  					<a class="btn btn-info btn-lg btn-block" href="/users/sign_in" role="button">Make a Booking</a>
   				<% end %>
 
 				</div>
