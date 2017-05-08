@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'schedules/index'
+
+  get 'schedules/new'
+
+  get 'schedules/create'
+
+  get 'schedules/show'
+
+  get 'schedules/edit'
+
+  get 'schedules/update'
+
+  get 'schedules/destroy'
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   resources :tours, only: [:index, :show]

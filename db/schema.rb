@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427214303) do
+ActiveRecord::Schema.define(version: 20170508211007) do
 
   create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "file"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 20170427214303) do
     t.datetime "updated_at",     null: false
     t.index ["tour_id"], name: "index_bookings_on_tour_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
+  create_table "schedules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "rule"
+    t.integer  "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_schedules_on_booking_id", using: :btree
   end
 
   create_table "tours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -70,5 +78,6 @@ ActiveRecord::Schema.define(version: 20170427214303) do
   add_foreign_key "attachments", "tours"
   add_foreign_key "bookings", "tours"
   add_foreign_key "bookings", "users"
+  add_foreign_key "schedules", "bookings"
   add_foreign_key "tours", "users"
 end

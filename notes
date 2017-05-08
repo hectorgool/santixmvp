@@ -41,12 +41,12 @@ ruby g controller bookings
 ruby d controller bookings
 
 
-
-
-
 rails g model booking customers:integer date:date departure_time:time tour:references user:references
 rails d model booking
 
 
 rails g controller bookings index new create show edit update destroy
 rails d controller bookings index new create show edit update destroy
+
+rails g model schedule rule:string booking:references
+rails g controller schedules index new create show edit update destroy
